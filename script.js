@@ -10,15 +10,17 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(tickClock, 1000);
 });
 
-// Serach element in an array
-function searchElemnt(ar, itm) {
-  for (let i = 0; i <= ar.length; i++) {
-    if (ar[i] === itm) {
-        return true
+// array soring (Bubble sort)
+let arr = [40,30,12,25]
+
+for (let i = 0; i < arr.length; i++){
+    for (let j = 0; j <arr.length; j++){
+        if(arr[j] > arr[j+1]){
+            let temp = arr[j];
+            arr[j] = arr[j+1];
+            arr[j+1] = temp
+        }
     }
-  }
-  return false
 }
-let arr = [20, 30, 10, 5, 50, 100];
-let item = 200;
-console.log(searchElemnt(arr, item));
+
+console.log(arr)
