@@ -10,17 +10,15 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(tickClock, 1000);
 });
 
-// delete element from an array
-let data = [10,20,30,12,19,92];
-let pos = 2;
-for (let i = pos; i < data.length-1; i++){
-    data[i] = data[i+1]
+// Serach element in an array
+function searchElemnt(ar, itm) {
+  for (let i = 0; i <= ar.length; i++) {
+    if (ar[i] === itm) {
+        return true
+    }
+  }
+  return false
 }
-data.length -- ;
-console.log(data)
-
-
-
-
-
-
+let arr = [20, 30, 10, 5, 50, 100];
+let item = 200;
+console.log(searchElemnt(arr, item));
