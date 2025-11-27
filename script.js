@@ -10,19 +10,17 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(tickClock, 1000);
 });
 
-
-let data = [60,30,10,67,40];
+// delete element from an array
+let data = [10,20,30,12,19,92];
 let pos = 2;
-let newEl = 70;
-
-for (let i = data.length-1; i >=pos; i--){
-    data[i + 1] = data[i]
-    if(i === pos){
-        data[i] = newEl 
-    }
-    console.log(data)
-
+for (let i = pos; i < data.length-1; i++){
+    data[i] = data[i+1]
 }
+data.length -- ;
+console.log(data)
+
+
+
 
 
 
