@@ -10,17 +10,12 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(tickClock, 1000);
 });
 
-// array soring (Bubble sort)
-let arr = [40,30,12,25]
+// Recursion
 
-for (let i = 0; i < arr.length; i++){
-    for (let j = 0; j <arr.length; j++){
-        if(arr[j] > arr[j+1]){
-            let temp = arr[j];
-            arr[j] = arr[j+1];
-            arr[j+1] = temp
-        }
-    }
+function factorial(x) {
+  if (x == 0 || x == 1) {
+    return 1;
+  }
+  return x * factorial(x - 1);
 }
-
-console.log(arr)
+console.log(factorial(5));
