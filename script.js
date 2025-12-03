@@ -10,16 +10,24 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(tickClock, 1000);
 });
 
-// reverse array with recursion
+// stack with Javascript (push & pop)
+let data = [];
+let currentLength = data.length;
 
-function reverseArray(arr, start, last) {
-  if (start >= last) return arr;
-
-  let temp = arr[start];
-  arr[start] = arr[last];
-  arr[last] = temp;
-  return reverseArray(arr, start + 1, last - 1);
+function push(el) {
+  data[currentLength] = el;
+  currentLength++;
 }
 
-let array = [3, 20, 9, 0];
-console.log(reverseArray(array, 0, array.length - 1));
+function pop(){
+  console.log(currentLength)
+  currentLength -= 1
+  data.length = currentLength
+}
+
+push(20);
+push(30);
+push(40);
+pop()
+pop()
+console.log(data);
