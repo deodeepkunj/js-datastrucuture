@@ -10,12 +10,16 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(tickClock, 1000);
 });
 
-// Recursion
+// reverse array with recursion
 
-function factorial(x) {
-  if (x == 0 || x == 1) {
-    return 1;
-  }
-  return x * factorial(x - 1);
+function reverseArray(arr, start, last) {
+  if (start >= last) return arr;
+
+  let temp = arr[start];
+  arr[start] = arr[last];
+  arr[last] = temp;
+  return reverseArray(arr, start + 1, last - 1);
 }
-console.log(factorial(5));
+
+let array = [3, 20, 9, 0];
+console.log(reverseArray(array, 0, array.length - 1));
