@@ -10,24 +10,34 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(tickClock, 1000);
 });
 
-// stack with Javascript (push & pop)
+// Reverse String with Stack
 let data = [];
-let currentLength = data.length;
-
+let currentsize = data.length;
+let str = "Hello";
 function push(el) {
-  data[currentLength] = el;
-  currentLength++;
+  data[currentsize] = el;
+  currentsize++;
 }
 
-function pop(){
-  console.log(currentLength)
-  currentLength -= 1
-  data.length = currentLength
+function pop() {
+  let lastitem = data[currentsize - 1];
+  currentsize -= 1;
+  data.length = currentsize;
+  return lastitem;
 }
 
-push(20);
-push(30);
-push(40);
-pop()
-pop()
-console.log(data);
+str = str.split("");
+
+function reverseStr(ar) {
+  for (let i = 0; i < ar.length; i++) {
+    push(ar[i]);
+  }
+  for (let i = 0; i < ar.length; i++) {
+    ar[i] = pop();
+  }
+  return str.join("")
+}
+
+console.log(reverseStr(str))
+
+
